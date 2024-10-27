@@ -95,3 +95,24 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+document.querySelectorAll("[data-filter-btn]").forEach(button => {
+  button.addEventListener("click", () => {
+    const filterValue = button.getAttribute("data-filter-btn");
+
+    document.querySelectorAll(".art-item").forEach(item => {
+      const category = item.getAttribute("data-category");
+      if (filterValue === "all" || filterValue === category) {
+        item.style.display = "block";
+      } else {
+        item.style.display = "none";
+      }
+    });
+
+    document.querySelectorAll("[data-filter-btn]").forEach(btn => {
+      btn.classList.remove("active");
+    });
+    button.classList.add("active");
+  });
+});
+
