@@ -2091,6 +2091,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 }
 
 .see-more{
+  margin-left: 10px;
   color:rgb(195, 195, 144);
   font-size: small;
 }
